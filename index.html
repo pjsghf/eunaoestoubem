@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eu Não Estou Bem — Livro Digital</title>
+  <meta name="description" content="Um livro para quem cansou de fingir que está tudo bem." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Eu Não Estou Bem — Livro Digital" />
+  <meta property="og:description" content="Um livro para quem cansou de fingir que está tudo bem. Talvez você chore nas primeiras páginas. Não porque este livro quer te derrubar, mas porque finalmente coloca em palavras o que você nunca conseguiu explicar." />
+  <meta property="og:url" content="https://eunaoestoubem.meupropositodigital.com.br" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="Eu Não Estou Bem" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eu Não Estou Bem — Livro Digital" />
+  <meta name="twitter:description" content="Um livro para quem cansou de fingir que está tudo bem." />
+
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #171717;
+      --card-2: #202020;
+      --text: #f6f1e7;
+      --muted: #c9c0ad;
+      --soft: #958b78;
+      --gold: #f2c94c;
+      --gold-2: #d8a92b;
+      --green: #00d36f;
+      --red: #ff1717;
+      --red-dark: #3c0505;
+      --border: rgba(242, 201, 76, .72);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top center, rgba(242, 201, 76, .08) 0, transparent 28rem),
+        linear-gradient(180deg, #0f0f0f 0%, #090909 100%);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(100%, 520px);
+      margin: 0 auto;
+      padding: 26px 18px 48px;
+    }
+
+    .alert {
+      width: 100%;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      text-align: center;
+      padding: 15px 18px;
+      border-radius: 7px;
+      font-size: 14px;
+      line-height: 1.35;
+      box-shadow: 0 12px 35px rgba(255, 23, 23, .22);
+      margin: 0 auto 28px;
+    }
+
+    .hero { text-align: center; }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(25px, 6vw, 34px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -.03em;
+      margin: 0 0 8px;
+      line-height: 1.1;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 7vw, 42px);
+      line-height: 1.08;
+      margin: 8px 0 12px;
+      letter-spacing: -.045em;
+    }
+
+    .hero p {
+      max-width: 420px;
+      margin: 0 auto 22px;
+      color: #e7dfcf;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .book-wrap {
+      margin: 14px auto 24px;
+      width: min(88%, 315px);
+      position: relative;
+    }
+
+    .book-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 8% 6%;
+      background: rgba(242,201,76,.18);
+      filter: blur(48px);
+      z-index: -1;
+      border-radius: 22px;
+    }
+
+    .book-cover {
+      width: 100%;
+      display: block;
+      border-radius: 7px;
+      box-shadow: var(--shadow);
+    }
+
+    .mock-book {
+      width: 100%;
+      aspect-ratio: 3/4.35;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.08) 0 3%, transparent 3% 100%),
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent 22%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 870"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="%23070707"/><stop offset="1" stop-color="%23181818"/></linearGradient></defs><rect width="600" height="870" fill="url(%23g)"/><rect x="0" y="0" width="600" height="870" fill="none" stroke="%23222222" stroke-width="12"/><circle cx="430" cy="520" r="42" fill="%23d9bd70" opacity=".75"/><path d="M0 565 C150 500 240 650 370 550 C470 475 510 550 600 505 L600 870 L0 870 Z" fill="%23131313"/><path d="M0 615 C150 545 245 680 382 590 C480 525 530 595 600 550" fill="none" stroke="%23d8a92b" opacity=".32" stroke-width="5"/><path d="M0 650 C155 590 235 710 360 635 C468 570 535 632 600 595" fill="none" stroke="%23fff" opacity=".14" stroke-width="4"/></svg>') center/cover;
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 42px 32px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mock-book::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, transparent 0 68%, rgba(255,255,255,.08) 72%, transparent 78%);
+      pointer-events: none;
+    }
+
+    .mock-title {
+      font-family: 'Playfair Display', serif;
+      color: #d7b46a;
+      font-size: 54px;
+      line-height: .93;
+      font-weight: 800;
+      letter-spacing: -.05em;
+      text-shadow: 0 2px 14px rgba(0,0,0,.25);
+    }
+
+    .mock-sub {
+      margin-top: 22px;
+      color: #eee8dc;
+      max-width: 200px;
+      font-size: 14px;
+      line-height: 1.35;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .mock-sub span { color: var(--gold); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)), var(--card);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 12px 42px rgba(0,0,0,.28);
+      margin: 22px 0;
+    }
+
+    .card.full-border { border: 1px solid var(--border); border-left: 4px solid var(--gold); }
+
+    h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin: 0 0 12px;
+      color: var(--gold);
+      line-height: 1.13;
+      letter-spacing: -.035em;
+    }
+
+    h2 { font-size: clamp(25px, 5.5vw, 34px); text-align: center; }
+    h3 { font-size: 26px; }
+
+    .card p { margin: 0 0 14px; font-size: 15px; }
+    .card p:last-child { margin-bottom: 0; }
+    strong { color: #fff; font-weight: 900; }
+    .gold { color: var(--gold); font-weight: 900; }
+    .muted { color: var(--muted); }
+
+    .excerpt {
+      background: #151515;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      color: #f0eadf;
+    }
+
+    .symptoms {
+      background: #222;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 17px 18px;
+      margin: 20px 0;
+    }
+
+    .symptoms-title { color: #e9e0cf; font-weight: 800; margin-bottom: 10px; }
+
+    ul {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 9px 0;
+      padding-left: 24px;
+      position: relative;
+      color: #e7dfcf;
+      font-size: 14px;
+    }
+
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 9px;
+      padding: 17px 18px;
+      background: linear-gradient(180deg, #ffd95d, #e9b932);
+      color: #121212;
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      box-shadow: 0 12px 28px rgba(242,201,76,.18);
+      transition: transform .18s ease, filter .18s ease;
+      margin-top: 16px;
+    }
+
+    .cta:hover { transform: translateY(-1px); filter: brightness(1.04); }
+
+    .note-box {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      margin-top: 20px;
+      color: #f4e7b0;
+      background: rgba(242,201,76,.035);
+      font-weight: 800;
+    }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 18px;
+      text-align: center;
+      background: #151515;
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      margin: 28px 0;
+    }
+
+    .price-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 25px;
+      font-weight: 900;
+      margin: 0 0 12px;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+
+    .old-price {
+      color: #8d8271;
+      text-decoration: line-through;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .new-price {
+      color: var(--green);
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .timer {
+      margin: 20px 0 22px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      text-align: center;
+      padding: 16px 14px;
+      border-radius: 8px;
+      font-size: 19px;
+      box-shadow: 0 14px 30px rgba(255, 23, 23, .2);
+    }
+
+    .final-warning {
+      background: linear-gradient(180deg, #460606, #2c0303);
+      border-radius: 10px;
+      padding: 22px 20px;
+      color: #ffd44c;
+      text-align: center;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-top: 22px;
+    }
+
+    .tiny {
+      color: #d3c7b0;
+      font-size: 13px;
+      font-style: italic;
+      margin: 8px auto 0;
+      max-width: 360px;
+    }
+
+    .divider {
+      width: 70px;
+      height: 2px;
+      background: var(--gold);
+      margin: 14px auto 16px;
+      opacity: .9;
+    }
+
+    .center { text-align: center; }
+
+    @media (max-width: 420px) {
+      .page { padding-left: 14px; padding-right: 14px; }
+      .card { padding: 20px 18px; }
+      .mock-title { font-size: 48px; }
+      .hero p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="alert">⚠️ AVISO: Este livro talvez diga o que você vem tentando esconder até de si mesma.</div>
+
+    <section class="hero">
+      <div class="kicker">🛑 Esse livro é para quem cansou de fingir.</div>
+      <h1>Você não precisa continuar dizendo “tá tudo bem” quando tudo dentro de você pede socorro.</h1>
+      <p>Talvez você chore nas primeiras páginas. Não porque este livro quer te derrubar, mas porque finalmente coloca em palavras o que você nunca conseguiu explicar.</p>
+
+      <div class="book-wrap" aria-label="Capa do livro Eu Não Estou Bem">
+        <div class="mock-book" role="img" aria-label="Capa do livro: Eu Não Estou Bem">
+          <div class="mock-title">Eu<br>Não<br>Estou<br>Bem</div>
+          <div class="mock-sub">Para quem se acostumou a dizer que está <span>tudo bem</span>.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card full-border">
+      <h3>📖 Trecho Inédito:</h3>
+      <div class="excerpt">
+        <p><strong>Você passou tempo demais tentando parecer bem para não preocupar ninguém.</strong></p>
+        <p>Sorriu quando queria ficar em silêncio. Respondeu “tá tudo certo” quando tudo dentro de você estava pedindo descanso. E talvez, de tanto repetir essa frase, você tenha começado a acreditar que não tinha direito de desabar.</p>
+        <p>Mas aqui você não precisa fingir.</p>
+        <p>Este livro começa no lugar onde você sempre foi interrompida: <span class="gold">na sua dor.</span></p>
+      </div>
+      <a href="#oferta" class="cta">Quero ler agora</a>
+    </section>
+
+    <section class="card">
+      <h2>🌙 Você não está fraca. Só passou tempo demais sendo forte sozinha.</h2>
+      <p class="center muted">Este livro não foi escrito para te dar mais uma cobrança. Foi escrito para colocar em palavras aquilo que você vem engolindo em silêncio.</p>
+      <p class="center"><strong>Você não precisa continuar provando que está bem para merecer cuidado.</strong></p>
+
+      <div class="symptoms">
+        <div class="symptoms-title">💬 Talvez você:</div>
+        <p>— já respondeu “tô bem” só para não ter que explicar</p>
+        <p>— já chorou no banho, no quarto ou no carro e depois continuou o dia</p>
+        <p>— já se sentiu culpada por estar cansada</p>
+        <p>— já cuidou de todo mundo enquanto ninguém percebeu você</p>
+        <p>— já pensou “eu não aguento mais”, mas mesmo assim levantou no outro dia</p>
+      </div>
+
+      <p class="center gold">Mas ninguém deveria precisar fingir estar bem para não incomodar.</p>
+
+      <p><strong>Eu Não Estou Bem</strong> é diferente. Ele não vai te mandar reagir como se você fosse uma máquina. Ele vai te ajudar a entender por que você se sente tão cansada, por que continua fingindo e como começar a voltar para si com delicadeza.</p>
+
+      <ul>
+        <li>Como reconhecer o cansaço emocional que você aprendeu a esconder</li>
+        <li>Por que dizer “tá tudo bem” virou uma defesa</li>
+        <li>Como parar de se culpar por não dar conta de tudo</li>
+        <li>Reflexões para reconstruir sua voz, sua calma e seus limites</li>
+        <li>Um caminho íntimo para pedir ajuda sem se sentir fraca</li>
+      </ul>
+
+      <div class="note-box">
+        💛 Você não está exagerando. Você só ficou tempo demais tentando parecer bem.<br><br>
+        <span class="muted">Aqui começa a volta para você.</span>
+      </div>
+    </section>
+
+    <section id="oferta" class="price-card">
+      <div class="price-title">🔥 DE <span class="old-price">R$97,00</span> POR APENAS <span class="new-price">R$17,00</span></div>
+      <p class="tiny">Por tempo limitado. Se este botão ainda aparece para você, a oferta ainda está disponível.</p>
+      <a href="#checkout" class="cta">Quero ler agora</a>
+    </section>
+
+    <div class="timer">Oferta expira em: <span id="countdown">04:56</span></div>
+
+    <section class="final-warning" id="checkout">
+      Se você fechar essa página agora, talvez volte para a mesma frase de sempre: “tá tudo bem”. Mesmo cansada. Mesmo em silêncio. Mesmo querendo ser percebida. Mas se continuar, talvez essa seja a primeira vez em muito tempo que você escolhe se ouvir.
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var total = 4 * 60 + 56;
+      var el = document.getElementById('countdown');
+
+      function tick() {
+        if (total <= 0) {
+          el.textContent = '00:00';
+          return;
+        }
+        var min = Math.floor(total / 60);
+        var sec = total % 60;
+        el.textContent = String(min).padStart(2, '0') + ':' + String(sec).padStart(2, '0');
+        total--;
+      }
+
+      tick();
+      var interval = setInterval(function () {
+        tick();
+        if (total <= 0) clearInterval(interval);
+      }, 1000);
+    })();
+  </script>
+
+  <!-- Product structured data (invisible) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Eu Não Estou Bem",
+    "description": "Um livro digital para quem cansou de fingir que está tudo bem.",
+    "offers": {
+      "@type": "Offer",
+      "price": "17.00",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</body>
+</html>
