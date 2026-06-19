@@ -340,21 +340,28 @@ li::before {
 
 /* Price Card */
 .price-card {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 24px 18px;
+  border: 2px solid rgba(242, 201, 76, 0.45);
+  border-radius: 20px;
+  padding: 38px 28px;
   text-align: center;
-  background: #151515;
-  box-shadow: 0 18px 50px rgba(0,0,0,.35);
-  margin: 28px 0;
+  background: linear-gradient(180deg, #181818 0%, #111111 100%);
+  box-shadow: 0 22px 65px rgba(0,0,0,.65), 0 0 45px rgba(242, 201, 76, 0.06);
+  margin: 36px 0;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(242, 201, 76, 0.85);
+  box-shadow: 0 28px 75px rgba(0,0,0,.75), 0 0 55px rgba(242, 201, 76, 0.12);
 }
 
 .price-title {
   font-family: 'Playfair Display', serif;
   color: var(--gold);
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 900;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   line-height: 1.1;
   letter-spacing: -.02em;
 }
@@ -362,29 +369,31 @@ li::before {
 .old-price {
   color: #8d8271;
   text-decoration: line-through;
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 900;
 }
 
 .new-price {
   color: var(--green);
-  font-size: 38px;
+  font-size: 54px;
   font-weight: 900;
-  letter-spacing: -.04em;
+  letter-spacing: -.045em;
   display: block;
   line-height: 1;
-  margin: 4px 0;
+  margin: 8px 0;
 }
 
 .price-badge {
   display: inline-block;
   background: var(--green);
   color: #111;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
-  padding: 2px 10px;
+  padding: 4px 14px;
   border-radius: 999px;
-  margin-top: 8px;
+  margin-top: 10px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 
 /* Timer */
@@ -816,9 +825,12 @@ a:focus-visible,
   }
 }
 
-/* Make the text on the primary button slightly more premium */
+/* Make the text on the primary button slightly more premium and larger */
 .cta-primary {
-  letter-spacing: .03em;
+  letter-spacing: .05em;
+  padding: 21px 26px;
+  font-size: 19px;
+  border-radius: 12px;
 }
 
 /* Elegant attention around the price area */
