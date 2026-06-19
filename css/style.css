@@ -1,0 +1,859 @@
+/* ============================================
+   Eu Não Estou Bem - Landing Page Styles
+   Refactored & Enhanced
+   ============================================ */
+
+:root {
+  --bg: #0b0b0b;
+  --card: #171717;
+  --card-2: #202020;
+  --text: #f6f1e7;
+  --muted: #c9c0ad;
+  --soft: #958b78;
+  --gold: #f2c94c;
+  --gold-2: #d8a92b;
+  --green: #00d36f;
+  --red: #ff1717;
+  --red-dark: #3c0505;
+  --border: rgba(242, 201, 76, .72);
+  --shadow: 0 18px 55px rgba(0,0,0,.55);
+  --radius: 18px;
+}
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top center, rgba(242, 201, 76, .08) 0, transparent 28rem),
+    linear-gradient(180deg, #0f0f0f 0%, #090909 100%);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.55;
+}
+
+/* Container */
+.page {
+  width: min(100%, 620px); /* Wider on desktop */
+  margin: 0 auto;
+  padding: 26px 18px 80px; /* Extra bottom padding for sticky CTA */
+}
+
+@media (max-width: 420px) {
+  .page { padding-left: 14px; padding-right: 14px; padding-bottom: 100px; }
+}
+
+/* Alert */
+.alert {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+  padding: 15px 18px;
+  border-radius: 7px;
+  font-size: 14px;
+  line-height: 1.35;
+  box-shadow: 0 12px 35px rgba(255, 23, 23, .22);
+  margin: 0 auto 28px;
+}
+
+/* Hero */
+.hero { text-align: center; }
+
+.kicker {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(25px, 6vw, 34px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 42px);
+  line-height: 1.08;
+  margin: 8px 0 12px;
+  letter-spacing: -.045em;
+}
+
+.hero p {
+  max-width: 420px;
+  margin: 0 auto 22px;
+  color: #e7dfcf;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Book Cover */
+.book-wrap {
+  margin: 14px auto 24px;
+  width: 100%;
+  position: relative;
+  perspective: 1200px; /* For tilt effect */
+}
+
+.book-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 8% 6%;
+  background: rgba(242,201,76,.18);
+  filter: blur(48px);
+  z-index: -1;
+  border-radius: 22px;
+}
+
+.mock-book {
+  width: 100%;
+  aspect-ratio: 3/4.35;
+  background: 
+    linear-gradient(90deg, rgba(255,255,255,.07) 0 4%, transparent 4% 100%),
+    linear-gradient(180deg, rgba(255,255,255,.06), transparent 25%),
+    #171717;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 32px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+/* Lightweight decorative elements instead of heavy SVG data URI */
+.mock-book::before {
+  content: '';
+  position: absolute;
+  right: 18%; bottom: 18%;
+  width: 68px; height: 68px;
+  background: #d7b46a;
+  border-radius: 50%;
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.mock-book::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 0 68%, rgba(255,255,255,.08) 72%, transparent 78%);
+  pointer-events: none;
+}
+
+/* For when user replaces with real image */
+.book-cover {
+  width: 100%;
+  display: block;
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mock-title {
+  font-family: 'Playfair Display', serif;
+  color: #d7b46a;
+  font-size: 54px;
+  line-height: .93;
+  font-weight: 800;
+  letter-spacing: -.05em;
+  text-shadow: 0 2px 14px rgba(0,0,0,.25);
+}
+
+.mock-sub {
+  margin-top: 22px;
+  color: #eee8dc;
+  max-width: 200px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-family: 'Playfair Display', serif;
+}
+
+.mock-sub span { color: var(--gold); }
+
+/* Cards */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)), var(--card);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 12px 42px rgba(0,0,0,.28);
+  margin: 22px 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 50px rgba(0,0,0,.35);
+}
+
+.card.full-border { 
+  border: 1px solid var(--border); 
+  border-left: 4px solid var(--gold); 
+}
+
+h2, h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 12px;
+  color: var(--gold);
+  line-height: 1.13;
+  letter-spacing: -.035em;
+}
+
+h2 { font-size: clamp(25px, 5.5vw, 34px); text-align: center; }
+h3 { font-size: 26px; }
+
+.card p { margin: 0 0 14px; font-size: 15px; }
+.card p:last-child { margin-bottom: 0; }
+
+strong { color: #fff; font-weight: 900; }
+.gold { color: var(--gold); font-weight: 900; }
+.muted { color: var(--muted); }
+
+/* Excerpt */
+.excerpt {
+  background: #151515;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  color: #f0eadf;
+}
+
+/* Symptoms */
+.symptoms {
+  background: #222;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 17px 18px;
+  margin: 20px 0;
+}
+
+.symptoms-title { 
+  color: #e9e0cf; 
+  font-weight: 800; 
+  margin-bottom: 10px; 
+}
+
+/* Lists */
+ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 9px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #e7dfcf;
+  font-size: 14px;
+}
+
+li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+/* CTA Buttons - Enhanced */
+.cta {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 9px;
+  padding: 17px 18px;
+  background: linear-gradient(180deg, #ffd95d, #e9b932);
+  color: #121212;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  box-shadow: 0 12px 28px rgba(242,201,76,.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  margin-top: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(242, 201, 76, 0.35);
+  filter: brightness(1.05);
+}
+
+.cta:active {
+  transform: translateY(0);
+}
+
+/* Gold glow effect on hover */
+.cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.cta:hover::after {
+  left: 250%;
+}
+
+/* Note box */
+.note-box {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  margin-top: 20px;
+  color: #f4e7b0;
+  background: rgba(242,201,76,.035);
+  font-weight: 800;
+}
+
+/* Price Card */
+.price-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 18px;
+  text-align: center;
+  background: #151515;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  margin: 28px 0;
+}
+
+.price-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 25px;
+  font-weight: 900;
+  margin: 0 0 12px;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.old-price {
+  color: #8d8271;
+  text-decoration: line-through;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.new-price {
+  color: var(--green);
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  display: block;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.price-badge {
+  display: inline-block;
+  background: var(--green);
+  color: #111;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-top: 8px;
+}
+
+/* Timer */
+.timer {
+  margin: 20px 0 22px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+  padding: 16px 14px;
+  border-radius: 8px;
+  font-size: 19px;
+  box-shadow: 0 14px 30px rgba(255, 23, 23, .2);
+  transition: background 0.3s ease;
+}
+
+.timer.low-time {
+  animation: pulse 1s infinite;
+  background: #c11212;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Final Warning */
+.final-warning {
+  background: linear-gradient(180deg, #460606, #2c0303);
+  border-radius: 10px;
+  padding: 22px 20px;
+  color: #ffd44c;
+  text-align: center;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.55;
+  margin-top: 22px;
+}
+
+/* Tiny text */
+.tiny {
+  color: #d3c7b0;
+  font-size: 13px;
+  font-style: italic;
+  margin: 8px auto 0;
+  max-width: 360px;
+}
+
+/* New Sections: Features, Testimonials, Guarantee */
+
+.features {
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  margin: 24px 0;
+  border: 1px solid rgba(242,201,76,.15);
+}
+
+.features h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.features ul {
+  display: grid;
+  gap: 10px;
+}
+
+.features li {
+  padding-left: 28px;
+  font-size: 15px;
+}
+
+.testimonials {
+  margin: 28px 0;
+}
+
+.testimonial {
+  background: #1f1f1f;
+  border-left: 4px solid var(--gold);
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  font-size: 14.5px;
+}
+
+.testimonial-author {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.guarantee {
+  text-align: center;
+  background: rgba(0, 211, 111, 0.08);
+  border: 1px solid var(--green);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 22px 0;
+  font-weight: 800;
+  color: #a8f0c9;
+}
+
+.guarantee .icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sticky CTA for mobile */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  padding: 12px 16px;
+  border-top: 1px solid rgba(242,201,76,.3);
+  z-index: 100;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: block;
+  }
+}
+
+.sticky-cta .cta {
+  margin-top: 0;
+  padding: 14px;
+  font-size: 15px;
+}
+
+/* Accessibility */
+button:focus-visible,
+a:focus-visible,
+.cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .mock-book,
+  .card,
+  .cta,
+  .book-wrap {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Small utility */
+.center { text-align: center; }
+.divider {
+  width: 70px;
+  height: 2px;
+  background: var(--gold);
+  margin: 14px auto 16px;
+  opacity: .9;
+}
+
+/* ============================================
+   ELEGANT ATTENTION-GRABBING EFFECTS
+   (tasteful, slow, sophisticated - matching the emotional tone)
+   ============================================ */
+
+/* 1. Gold Shimmer on main headline */
+.shimmer {
+  position: relative;
+  background: linear-gradient(
+    110deg,
+    var(--text) 0%,
+    var(--text) 40%,
+    #f8e8b0 50%,
+    var(--text) 60%,
+    var(--text) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: elegant-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes elegant-shimmer {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: -200% 0; }
+}
+
+/* 2. Soft breathing glow on the book cover */
+.mock-book.breathe {
+  animation: breathe-glow 5.5s ease-in-out infinite;
+}
+
+@keyframes breathe-glow {
+  0%, 100% {
+    box-shadow: 0 18px 55px rgba(0,0,0,.55);
+  }
+  50% {
+    box-shadow: 0 18px 70px rgba(242, 201, 76, 0.22), 0 18px 55px rgba(0,0,0,.55);
+  }
+}
+
+/* 3. Breathing effect on the prominent price */
+.new-price.breathe-price {
+  animation: price-breathe 4.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes price-breathe {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  50% {
+    transform: scale(1.025);
+    text-shadow: 0 0 12px rgba(0, 211, 111, 0.35);
+  }
+}
+
+/* 4. Elegant floating particles in hero (very subtle gold orbs) */
+.hero {
+  position: relative;
+}
+
+.hero-particles {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  height: 55%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.18;
+  animation: float-particle 9s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--gold);
+}
+
+.hero-particles span:nth-child(1) { top: 22%; left: 18%; animation-delay: 0s; }
+.hero-particles span:nth-child(2) { top: 48%; left: 72%; animation-delay: 2.4s; }
+.hero-particles span:nth-child(3) { top: 68%; left: 28%; animation-delay: 5.1s; }
+.hero-particles span:nth-child(4) { top: 31%; left: 82%; animation-delay: 7.3s; }
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(-18px) scale(1.2);
+    opacity: 0.28;
+  }
+}
+
+/* 5. Elegant staggered animation for symptoms list */
+.symptoms p {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: elegant-stagger 0.7s forwards;
+}
+
+.symptoms p:nth-child(1) { animation-delay: 0.1s; }
+.symptoms p:nth-child(2) { animation-delay: 0.25s; }
+.symptoms p:nth-child(3) { animation-delay: 0.4s; }
+.symptoms p:nth-child(4) { animation-delay: 0.55s; }
+.symptoms p:nth-child(5) { animation-delay: 0.7s; }
+
+@keyframes elegant-stagger {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 6. Subtle animated gold border accent on cards */
+.card, .price-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after, .price-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 40%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(242, 201, 76, 0.18),
+    transparent
+  );
+  transition: left 1.2s ease;
+  pointer-events: none;
+}
+
+.card:hover::after,
+.price-card:hover::after {
+  left: 250%;
+}
+
+/* Enhanced existing reveals to feel more premium */
+.reveal {
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Make sure particles don't affect layout */
+.hero {
+  position: relative;
+}
+
+/* Respect reduced motion for new effects */
+@media (prefers-reduced-motion: reduce) {
+  .shimmer,
+  .mock-book.breathe,
+  .new-price.breathe-price,
+  .hero-particles span,
+  .symptoms p,
+  .card::after,
+  .price-card::after,
+  .cta-primary,
+  .cta-primary::before,
+  .cta-primary::after,
+  .price-card::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   ELEGANT ATTENTION ON THE BUY BUTTON (cta-primary)
+   ============================================ */
+
+/* Main purchase button - elegant attention */
+.cta-primary {
+  position: relative;
+  overflow: visible; /* allow glows to show */
+  animation: cta-breathe 3.8s ease-in-out infinite;
+  box-shadow: 
+    0 12px 28px rgba(242, 201, 76, .18),
+    0 0 0 0 rgba(242, 201, 76, 0.25);
+}
+
+/* Continuous elegant soft gold glow pulse around the button */
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 14px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  opacity: 0.25;
+  animation: cta-ring-pulse 4s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Extra outer soft halo that expands slowly */
+.cta-primary::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 22px;
+  background: radial-gradient(circle, rgba(242, 201, 76, 0.12) 0%, transparent 70%);
+  opacity: 0.6;
+  z-index: -2;
+  animation: cta-halo-breathe 5.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes cta-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 12px 28px rgba(242, 201, 76, .18),
+      0 0 0 0 rgba(242, 201, 76, 0.22);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 
+      0 18px 40px rgba(242, 201, 76, .28),
+      0 0 0 8px rgba(242, 201, 76, 0.12);
+  }
+}
+
+@keyframes cta-ring-pulse {
+  0%, 100% {
+    opacity: 0.22;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes cta-halo-breathe {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+/* Make the text on the primary button slightly more premium */
+.cta-primary {
+  letter-spacing: .03em;
+}
+
+/* Elegant attention around the price area */
+.price-card {
+  position: relative;
+}
+
+.price-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: linear-gradient(transparent, rgba(242, 201, 76, 0.06), transparent);
+  z-index: -1;
+  animation: price-card-glow 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes price-card-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* When hovering the primary CTA, intensify elegantly */
+.cta-primary:hover {
+  animation-duration: 2.2s;
+  box-shadow: 
+    0 22px 55px rgba(242, 201, 76, .35),
+    0 0 0 10px rgba(242, 201, 76, 0.18);
+}
+
+.cta-primary:hover::before {
+  opacity: 0.6;
+}
+
+.cta-primary:hover::after {
+  opacity: 0.9;
+}
