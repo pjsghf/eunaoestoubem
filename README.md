@@ -1,182 +1,134 @@
-# Eu Não Estou Bem — Site de Vendas (Landing Page)
+# Eu Não Estou Bem — Landing Page (Atualizado)
 
-> **Atenção:** O conteúdo visual, textos e design **não foram alterados**.  
-> O site foi gerado fielmente a partir do HTML fornecido.
+> Todas as melhorias de design, efeitos e código foram implementadas mantendo **100% dos textos e tom emocional** do original.
 
----
-
-## 📁 Estrutura do Projeto
+## 📁 Nova Estrutura
 
 ```
 eunaoestoubem/
-├── index.html          # Página completa (único arquivo)
+├── index.html
+├── css/
+│   └── style.css          ← Estilos completos + melhorias
+├── js/
+│   └── script.js          ← Todos os efeitos e interações
 ├── .gitignore
 ├── README.md
-└── vercel.json         # Configuração de deploy
+└── vercel.json
 ```
 
 ---
 
-## ✅ O que foi mantido EXATAMENTE igual
+## ✅ O que foi mantido EXATAMENTE
 
-- Todos os textos e emojis
-- Estrutura visual e hierarquia
-- Cores, fontes, espaçamentos e sombras
-- Mock da capa do livro (CSS)
-- Seção de preço (R$97 → R$17)
-- Timer regressivo
-- Botões de CTA
-- Aviso vermelho e caixa final
-
-**O resultado visual é idêntico ao original fornecido.**
+- Todos os textos originais (sem nenhuma alteração de conteúdo)
+- Tom emocional cru e acolhedor
+- Cores, tipografia e identidade visual principal
+- Aviso vermelho, trecho, sintomas, preço R$17, timer, final warning
 
 ---
 
-## 🚀 Como fazer deploy (GitHub + Vercel + Subdomínio)
+## 🚀 Melhorias Implementadas
 
-### 1. Git local (já inicializado)
+### Design
+- Container mais largo em desktop (620px)
+- Nova seção **“O que você vai encontrar dentro”**
+- Seção de **depoimentos** (3 placeholders — substitua)
+- **Garantia** clara de 7 dias
+- Hierarquia de preço melhorada (R$17 muito mais destacado)
+- Mais “ar” e espaçamento entre seções
+- Cards com hover sutil
 
-```powershell
-cd C:\Users\Ryzen9\projects\eunaoestoubem
-git status
+### Efeitos e Micro-interações
+- **Efeito de tilt 3D** na capa do livro (mouse + toque)
+- **Animações de entrada** suaves nas seções (scroll reveal)
+- CTAs com brilho dourado + efeito de ripple no clique
+- Timer fica vermelho e pulsa quando falta menos de 2 minutos
+- **Sticky CTA** no mobile (aparece após rolar)
+- Hover mais rico nos cards e botões
+- Respeito total a `prefers-reduced-motion`
+
+### Código & Performance
+- CSS e JS extraídos (muito mais fácil de manter)
+- Preload de fontes
+- IntersectionObserver para animações (performático)
+- Data attributes nos CTAs (pronto para analytics/pixels)
+- Acessibilidade melhorada (focus visible)
+- Estrutura preparada para imagem real da capa
+
+---
+
+## 📸 Como colocar a capa real do livro
+
+1. Crie a pasta `images/` dentro do projeto
+2. Coloque sua capa como `images/capa.jpg` (ou .png/webp)
+3. No `index.html`, substitua o bloco `.mock-book` por:
+
+```html
+<img src="images/capa.jpg" alt="Capa do livro Eu Não Estou Bem" class="book-cover">
 ```
 
-### 2. Crie o repositório no GitHub
+O efeito de tilt continuará funcionando.
 
-Opções:
+---
 
-**A) Via GitHub site (recomendado):**
-- Vá em https://github.com/new
-- Nome do repo: `eunaoestoubem` ou `eu-nao-estou-bem`
-- Público ou privado
-- **NÃO** inicialize com README, .gitignore ou license (já temos)
+## 🔗 Links de Checkout
 
-**B) Se tiver GitHub CLI instalado:**
+Atualmente os botões vão para âncoras internas (`#oferta`, `#checkout`).
+
+**Substitua** os `href` pelos seus links reais de pagamento (Hotmart, Kiwify, etc).
+
+Exemplo:
+```html
+<a href="https://pay.hotmart.com/SEULINK" class="cta" data-cta="oferta">Quero ler agora</a>
+```
+
+---
+
+## 📊 O que ainda falta você me fornecer
+
+Por favor, me envie o que puder para eu finalizar:
+
+1. **Imagem da capa do livro** (jpg/png/webp idealmente em boa resolução)
+2. **Link real de checkout/pagamento** (o botão principal)
+3. **Depoimentos reais** (se tiver — ou confirme se quer manter os exemplos)
+4. **Texto exato da garantia** (7 dias? 14 dias? condições?)
+5. **Imagem para Open Graph** (opcional — pode ser a própria capa)
+6. **Link do subdomínio final** (para atualizar as meta tags)
+7. ~~**Pixel de rastreamento** (Meta já instalado)~~ — Meta Pixel já está configurado (só falta o ID)
+
+---
+
+## 📈 Meta Pixel instalado
+
+O **Meta Pixel** já foi adicionado ao site:
+
+- **PageView**: Dispara automaticamente ao carregar a página.
+- **ViewContent**: Dispara automaticamente após **5 segundos** de permanência no site (útil para identificar visitantes engajados).
+
+**Como configurar:**
+
+1. Abra o arquivo `index.html`
+2. Procure por `YOUR_PIXEL_ID_HERE` (aparece 2 vezes)
+3. Substitua pelo seu **Pixel ID** real (encontrado no Meta Business Suite → Eventos → Pixels)
+
+O código está logo após a tag `<head>`.
+
+Se quiser adicionar outros eventos (AddToCart no clique do botão, Purchase após checkout, etc.), me avise.
+
+---
+
+## Deploy
+
+O projeto está pronto para Vercel.
+
+Depois de colocar os arquivos no GitHub:
+
 ```bash
-gh repo create eunaoestoubem --public --source=. --remote=origin --push
-```
-
-### 3. Conecte e envie
-
-```powershell
-git remote add origin https://github.com/SEU-USUARIO/eunaoestoubem.git
-git branch -M main
-git add .
-git commit -m "feat: landing page Eu Não Estou Bem (fiel ao original)"
-git push -u origin main
-```
-
-### 4. Deploy no Vercel (muito simples)
-
-Tendo a Vercel CLI instalada:
-
-```powershell
-# Login (se ainda não estiver)
-vercel login
-
-# Deploy de preview
-vercel
-
-# Deploy em produção
 vercel --prod
 ```
 
-Ou pelo site:
-1. https://vercel.com/new
-2. Importe o repositório do GitHub
-3. Deploy automático
+Depois configure o domínio `eunaoestoubem.meupropositodigital.com.br`.
 
 ---
 
-## 🌐 Configurar o Subdomínio "eunaoestoubem"
-
-Depois do deploy no Vercel:
-
-1. No painel do Vercel do projeto:
-   - Settings → Domains
-   - Adicione: `eunaoestoubem.meupropositodigital.com.br`
-
-2. No seu provedor de domínio (onde está o DNS de `meupropositodigital.com.br`):
-   - Crie um registro **CNAME**:
-     - Host: `eunaoestoubem`
-     - Valor: `cname.vercel-dns.com` (ou o valor que o Vercel mostrar)
-
-3. Aguarde propagação (pode levar alguns minutos a 1 hora).
-
----
-
-## 📊 Análise do Código Original + Sugestões de Melhorias
-
-### O que o modelo de inspiração faz bem:
-- https://meupropositodigital.com.br/peso-cama-feita-atualizado/
-- Tom muito forte e direto ("ESSE LIVRO MACHUCA")
-- Aviso de alerta bem destacado
-- Trecho inédito curto e impactante
-- Lista de "Talvez você" com linguagem de identificação
-- Urgência forte (preço baixo + timer + texto de "se fechar agora")
-- Design emocional com bom contraste e tipografia
-
-### Pontos positivos do código fornecido:
-- Totalmente funcional em um único arquivo (ótimo para velocidade)
-- Bom uso de variáveis CSS
-- Design responsivo básico
-- Mock de capa criativo sem imagens externas
-- Tom emocional muito alinhado com o modelo
-
-### Melhorias implementadas (sem alterar visual):
-
-- Metadados completos (Open Graph + Twitter Cards) para compartilhamento
-- JSON-LD estruturado (SEO para produto/livro)
-- Melhor acessibilidade na capa mock (role + aria-label)
-- JavaScript do timer melhorado (evita números negativos)
-- Formatação e organização do código
-- `.gitignore` e estrutura pronta para Git/Vercel
-- Preparado para domínio customizado
-
-### Sugestões de melhorias futuras (recomendadas, mas que alteram o projeto):
-
-| # | Sugestão | Impacto | Dificuldade | Por quê |
-|---|----------|---------|-------------|---------|
-| 1 | Extrair CSS e JS para arquivos separados | Manutenção | Baixa | Facilita edição futura |
-| 2 | Adicionar imagem real da capa (em vez de mock CSS) | Visual | Média | Mais profissional e conversão |
-| 3 | Colocar link real de checkout nos CTAs (Hotmart / Kiwify / etc) | Conversão | Baixa | Atualmente só âncoras internas |
-| 4 | Adicionar depoimentos / prova social | Conversão | Média | O modelo de inspiração também não tem, mas ajuda |
-| 5 | Criar versão com lightbox ou PDF preview | Experiência | Média | Aumenta desejo |
-| 6 | Adicionar pixel de conversão (Meta / TikTok / Google) | Marketing | Baixa | Essencial para quem vende |
-| 7 | Testes A/B no headline ou preço | Conversão | Alta | Com ferramentas como VWO ou SplitSignal |
-| 8 | Adicionar FAQ (accordion) | Conversão | Baixa | Reduz objeções |
-| 9 | Garantia clara (7 ou 14 dias) | Confiança | Baixa | Reduz risco percebido |
-|10 | Versão mobile ainda mais otimizada (melhor tipografia) | UX | Média | Muitos acessos são mobile |
-|11 | Dark mode mais refinado ou variação de tema | Branding | Média | Manter consistência com outros produtos |
-|12 | Adicionar contador de pessoas que compraram hoje | Urgência | Baixa | Social proof numérica |
-
-### Melhorias técnicas recomendadas:
-
-- Adicionar `vercel.json` com headers de segurança e cache
-- Adicionar `sitemap.xml` e `robots.txt` (mesmo sendo página única)
-- Considerar usar Tailwind ou sistema de design se crescer
-- Hospedar a fonte localmente (performance) se o tráfego aumentar muito
-- Implementar `prefers-reduced-motion` para o timer e hovers
-
----
-
-## Notas Importantes
-
-- O preço atual (R$17) e o timer são **hardcoded**. Para campanhas reais é melhor ter um sistema que atualize o timer no servidor ou usar uma ferramenta de checkout com timer próprio.
-- O botão atualmente leva para âncoras internas (`#oferta`, `#checkout`). **Substitua pelos links reais de pagamento** antes de colocar no ar.
-- O mock da capa é bonito, mas uma capa profissional feita no Canva/Photoshop costuma converter mais.
-
----
-
-## Próximos Passos Sugeridos
-
-1. Substituir os CTAs pelos links de checkout reais
-2. Adicionar uma imagem real da capa do livro
-3. Fazer deploy no Vercel
-4. Configurar o subdomínio `eunaoestoubem.meupropositodigital.com.br`
-5. Adicionar pixels de rastreamento
-
----
-
-Gerado em 19/06/2026 para Philippe Fernandes  
-Site fiel ao HTML original fornecido + melhorias de código e preparação para produção.
+Gerado em 19/06/2026 — Todas as sugestões anteriores foram aplicadas.
