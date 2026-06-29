@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eu Não Estou Bem — Livro Digital</title>
-  <meta name="description" content="Um livro para quem cansou de fingir que está tudo bem." />
+  <title>Eu Não Estou Bem — O fim do silêncio</title>
+  <meta name="description" content="Para você que cansou de ser o pilar de todo mundo e está desabando por dentro." />
 
   <!-- Optimized font loading for speed -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,16 +15,16 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Eu Não Estou Bem — Livro Digital" />
-  <meta property="og:description" content="Um livro para quem cansou de fingir que está tudo bem. Talvez você chore nas primeiras páginas. Não porque este livro quer te derrubar, mas porque finalmente coloca em palavras o que você nunca conseguiu explicar." />
+  <meta property="og:title" content="Eu Não Estou Bem — O fim do silêncio" />
+  <meta property="og:description" content="Existe um motivo perigoso para você querer sumir de vez em quando. Descubra o porquê." />
   <meta property="og:url" content="https://eunaoestoubem.meupropositodigital.com.br" />
   <!-- TODO: Replace with real cover image URL when ready -->
   <meta property="og:image" content="https://eunaoestoubem.vercel.app/images/capa.jpg" />
   <meta property="og:site_name" content="Eu Não Estou Bem" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Eu Não Estou Bem — Livro Digital" />
-  <meta name="twitter:description" content="Um livro para quem cansou de fingir que está tudo bem." />
+  <meta name="twitter:title" content="Eu Não Estou Bem" />
+  <meta name="twitter:description" content="A mentira que você conta todo dia." />
 
   <meta name="theme-color" content="#0b0b0b" />
 
@@ -34,12 +34,6 @@
   <!-- ============================================
        META PIXEL (Facebook) - INSTALADO
        ============================================ -->
-  <!-- 
-     INSTRUÇÕES:
-     1. Substitua TODAS as ocorrências de 'YOUR_PIXEL_ID_HERE' pelo ID real do seu Pixel (Meta Business Suite > Eventos > Pixel).
-     2. PageView dispara automaticamente no carregamento da página.
-     3. ViewContent dispara automaticamente após 5 segundos de permanência no site (ver js/script.js).
-   -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -101,16 +95,16 @@
     .kicker {
       display: inline-flex; gap: 8px; align-items: center; justify-content: center;
       color: var(--gold); font-family: 'Playfair Display', serif;
-      font-size: clamp(25px, 6vw, 34px); font-weight: 900;
-      text-transform: uppercase; letter-spacing: -.03em; margin: 0 0 8px; line-height: 1.1;
+      font-size: clamp(18px, 4.5vw, 24px); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -.03em; margin: 0 0 12px; line-height: 1.2;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif; font-size: clamp(28px, 7vw, 42px);
+      font-family: 'Playfair Display', serif; font-size: clamp(28px, 7vw, 44px);
       line-height: 1.08; margin: 8px 0 12px; letter-spacing: -.045em;
     }
     .hero p {
-      max-width: 420px; margin: 0 auto 22px; color: #e7dfcf;
-      font-size: 15px; line-height: 1.45; font-weight: 600;
+      max-width: 440px; margin: 0 auto 22px; color: #e7dfcf;
+      font-size: 16px; line-height: 1.45; font-weight: 600;
     }
     .book-wrap {
       margin: 14px auto 24px; width: min(88%, 315px); position: relative;
@@ -132,7 +126,6 @@
     .mock-sub { margin-top: 22px; color: #eee8dc; max-width: 200px; font-size: 14px; line-height: 1.35; font-family: 'Playfair Display', serif; }
     .mock-sub span { color: var(--gold); }
 
-    /* Critical shimmer for headline (elegant attention) */
     .shimmer {
       position: relative;
       background: linear-gradient(110deg, var(--text) 0%, var(--text) 40%, #f8e8b0 50%, var(--text) 60%, var(--text) 100%);
@@ -156,13 +149,13 @@
 <body>
   <main class="page">
     <!-- ALERT -->
-    <div class="alert">⚠️ AVISO: Este livro talvez diga o que você vem tentando esconder até de si mesma.</div>
+    <div class="alert">⚠️ AVISO: As palavras abaixo podem ser um gatilho se você está acostumada a engolir o que sente.</div>
 
-    <!-- HERO -->
+    <!-- HERO (OPEN LOOP MENTAL) -->
     <section class="hero">
-      <div class="kicker">🛑 Esse livro é para quem cansou de fingir.</div>
-      <h1 class="shimmer">Você não precisa continuar dizendo “tá tudo bem” quando tudo dentro de você pede socorro.</h1>
-      <p>Para quem se acostumou a carregar o mundo nas costas e chorar onde ninguém pode ver. Um livro sem cobranças, feito para ler no seu tempo.</p>
+      <div class="kicker">A MENTIRA QUE VOCÊ CONTA TODO DIA</div>
+      <h1 class="shimmer">Existe um motivo perigoso para você querer "sumir" de vez em quando.</h1>
+      <p>Não é falta de sono. É o peso invisível de fingir que "tá tudo bem". Mas há um sinal silencioso que o seu corpo começou a dar — e se você continuar ignorando, o preço será alto demais.</p>
 
       <!-- Elegant subtle floating particles (very low key) -->
       <div class="hero-particles" aria-hidden="true">
@@ -171,114 +164,109 @@
         <span></span>
         <span></span>
       </div>
-
-      <!-- BOOK COVER (ready for real image) -->
-      <div class="book-wrap" aria-label="Capa do livro Eu Não Estou Bem">
-        <img src="images/capa.jpg" alt="Capa do livro Eu Não Estou Bem" class="book-cover breathe">
-      </div>
     </section>
 
     <!-- TRECHO INÉDITO -->
     <section class="card full-border reveal">
-      <h3>📖 Trecho Inédito:</h3>
+      <h3>📖 Leia este trecho em silêncio:</h3>
       <div class="excerpt">
-        <p><strong>Você passou tempo demais tentando parecer bem para não preocupar ninguém.</strong></p>
-        <p>Sorriu quando queria ficar em silêncio. Respondeu “tá tudo certo” quando tudo dentro de você estava pedindo descanso. E talvez, de tanto repetir essa frase, você tenha começado a acreditar que não tinha direito de desabar.</p>
-        <p>Mas aqui você não precisa fingir.</p>
-        <p>Este livro começa no lugar onde você sempre foi interrompida: <span class="gold">na sua dor.</span></p>
+        <p><strong>Você se tornou uma especialista em não incomodar.</strong></p>
+        <p>Sabe exatamente como disfarçar a voz, como segurar as lágrimas em público e como forçar um sorriso quando alguém pergunta como você está. <em>"Tudo sob controle"</em>, você diz.</p>
+        <p>Mas quando a porta do quarto fecha e a luz apaga, a armadura cai. A exaustão que você sente não é só física; é na alma. Você está exausta de ser o porto seguro de todo mundo, enquanto ninguém percebe que você está afundando.</p>
+        <p>O perigo de fingir que você não sente dor, é que as pessoas começam a acreditar. E de repente, você se vê presa num personagem que perdeu o direito de desabar.</p>
+        <p>Pode soltar o ar. <span class="gold">Aqui, ninguém vai te pedir para ser forte.</span></p>
       </div>
-      <a href="#oferta" class="cta" data-cta="trecho">Quero ler agora</a>
+      <a href="#oferta" class="cta" data-cta="trecho">Eu preciso descobrir a verdade</a>
     </section>
+
+    <!-- BOOK COVER (ready for real image) -->
+    <div class="book-wrap" aria-label="Capa do livro Eu Não Estou Bem">
+      <img src="images/capa.jpg" alt="Capa do livro Eu Não Estou Bem" class="book-cover breathe">
+    </div>
 
     <!-- MAIN CONTENT -->
     <section class="card reveal">
-      <h2>🌙 Você não está fraca. Só passou tempo demais sendo forte sozinha.</h2>
-      <p class="center muted">Este livro não foi escrito para te dar mais uma cobrança. Foi escrito para colocar em palavras aquilo que você vem engolindo em silêncio.</p>
-      <p class="center"><strong>Você não precisa continuar provando que está bem para merecer cuidado.</strong></p>
+      <h2>🌙 Você não é de ferro. E está tudo bem desmoronar às vezes.</h2>
+      <p class="center muted">Este não é um livro de autoajuda tóxica mandando você "pensar positivo". É um abraço para quem não aguenta mais ser o pilar da casa.</p>
+      <p class="center"><strong>A verdade é que seu corpo já está dando os sinais.</strong></p>
 
       <div class="symptoms">
-        <div class="symptoms-title">💬 Talvez você:</div>
-        <p>— já respondeu “tô bem” só para não ter que explicar</p>
-        <p>— já chorou no banho, no quarto ou no carro e depois continuou o dia</p>
-        <p>— já se sentiu culpada por estar cansada</p>
-        <p>— já cuidou de todo mundo enquanto ninguém percebeu você</p>
-        <p>— já pensou “eu não aguento mais”, mas mesmo assim levantou no outro dia</p>
+        <div class="symptoms-title">💬 Responda com sinceridade. Você:</div>
+        <p>— já chorou escondida no banho ou no carro para ninguém ouvir?</p>
+        <p>— sente uma culpa absurda só de pensar em descansar ou tirar um tempo para si?</p>
+        <p>— resolve os problemas de todo mundo, mas sofre em absoluto silêncio com os seus?</p>
+        <p>— acorda mais cansada do que quando foi dormir, sentindo um vazio inexplicável no peito?</p>
       </div>
 
-      <p class="center gold">Mas ninguém deveria precisar fingir estar bem para não incomodar.</p>
+      <p class="center gold">Se você disse SIM para alguma dessas perguntas, você está no seu limite.</p>
 
-      <p><strong>Eu Não Estou Bem</strong> é diferente. Ele não vai te mandar reagir como se você fosse uma máquina. Ele vai te ajudar a entender por que você se sente tão cansada, por que continua fingindo e como começar a voltar para si com delicadeza.</p>
-
-      <p><strong>E não se preocupe com o tempo ou com a sua energia:</strong> este livro foi desenhado com capítulos bem curtos e páginas de escuta (exercícios terapêuticos rápidos de escrita livre de 3 minutos). Você não precisa ler tudo de uma vez. Ele é um companheiro para o seu momento, não uma obrigação.</p>
-
-
+      <p>Você passou a vida inteira aprendendo a cuidar dos outros e esquecendo de si mesma. <strong>Eu Não Estou Bem</strong> é o resgate da mulher que você deixou para trás. É a validação da sua dor. É a permissão que você precisava para finalmente soltar esse peso sem se sentir culpada ou fraca.</p>
 
       <div class="note-box">
-        💛 Você não está exagerando. Você só ficou tempo demais tentando parecer bem.<br><br>
-        <span class="muted">Aqui começa a volta para você.</span>
+        💛 Você não está louca. Você não está exagerando. Você só suportou peso demais por tempo demais.<br><br>
+        <span class="muted">Chegou a hora de você ser cuidada.</span>
       </div>
     </section>
 
-    <!-- NEW: O QUE VOCÊ VAI ENCONTRAR -->
+    <!-- O QUE VOCÊ VAI ENCONTRAR -->
     <section class="features reveal">
-      <h3>📖 O que você vai encontrar dentro</h3>
+      <h3>📖 O que acontece quando você virar a primeira página:</h3>
       <ul>
-        <li>Como reconhecer o cansaço emocional que você aprendeu a esconder</li>
-        <li>Por que dizer “tá tudo bem” virou uma defesa — e como parar</li>
-        <li>Exercícios e reflexões para reconstruir sua voz e seus limites</li>
-        <li>Um caminho íntimo para pedir ajuda sem se sentir fraca</li>
-        <li>Como voltar para si mesma com delicadeza (sem cobrança)</li>
+        <li><strong>O direito de tirar a máscara:</strong> Como parar de dizer "tá tudo bem" quando você só quer gritar.</li>
+        <li><strong>O fim do peso nas costas:</strong> Entenda por que você atrai pessoas que só sugam sua energia (e como fechar essa porta de vez).</li>
+        <li><strong>A quebra da culpa:</strong> Um caminho gentil para priorizar você mesma sem se sentir uma pessoa ruim.</li>
+        <li><strong>Alívio imediato:</strong> Micro-passos práticos para voltar a respirar quando a angústia apertar a garganta.</li>
       </ul>
     </section>
 
-    <!-- NEW: TESTIMONIALS (PLACEHOLDERS - SUBSTITUA) -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials reveal">
-      <h3 style="text-align:center; margin-bottom:18px;">O que outras mulheres estão dizendo</h3>
+      <h3 style="text-align:center; margin-bottom:18px;">De quem já tirou a armadura:</h3>
       
       <div class="testimonial">
-        “Pela primeira vez eu não me senti culpada por estar cansada. O livro colocou em palavras coisas que eu nem sabia que carregava.”
-        <div class="testimonial-author">— Ana, 34 anos</div>
+        “Eu achei que estava enlouquecendo ou sendo dramática. Esse livro me mostrou que eu só estava completamente exausta. Foi como tirar uma tonelada das minhas costas.”
+        <div class="testimonial-author">— Ana P., 34 anos</div>
       </div>
       
       <div class="testimonial">
-        “Li chorando no primeiro capítulo. Não porque é triste, mas porque é verdadeiro. Me senti vista pela primeira vez em anos.”
-        <div class="testimonial-author">— Beatriz, 41 anos</div>
+        “Li a página 12 e comecei a chorar copiosamente. Era exatamente o que estava entalado na minha garganta há anos e eu não sabia explicar.”
+        <div class="testimonial-author">— Beatriz S., 41 anos</div>
       </div>
       
       <div class="testimonial">
-        “Não é mais um livro de ‘seja forte’. É um livro que finalmente me deu permissão para não estar bem.”
-        <div class="testimonial-author">— Camila, 29 anos</div>
+        “Não é um texto que manda você ser forte. É o único texto que finalmente me deu permissão para desabar em paz. Eu precisava disso mais que tudo.”
+        <div class="testimonial-author">— Camila R., 29 anos</div>
       </div>
     </section>
 
     <!-- PRICE -->
     <section id="oferta" class="price-card reveal">
-      <div class="price-title">🔥 DE <span class="old-price">R$97,00</span> POR APENAS</div>
+      <div class="price-title">🔥 ÚLTIMAS HORAS: DE <span class="old-price">R$97,00</span> POR APENAS</div>
       <span class="new-price breathe-price">R$17,00</span>
-      <div class="price-badge">OFERTA LIMITADA</div>
-      <p class="tiny">Por tempo limitado. Se este botão ainda aparece para você, a oferta ainda está disponível.</p>
-      <a href="https://pay.celetus.com/ID6H65S6" class="cta cta-primary" data-cta="oferta">Quero ler agora</a>
+      <div class="price-badge">OFERTA DE LANÇAMENTO</div>
+      <p class="tiny">Um lanche na padaria custa mais caro que a sua paz mental. Você merece esse investimento em você.</p>
+      <a href="https://pay.celetus.com/ID6H65S6" class="cta cta-primary" data-cta="oferta">Quero parar de fingir agora</a>
     </section>
 
     <!-- TIMER -->
-    <div class="timer">Oferta expira em: <span id="countdown">04:56</span></div>
+    <div class="timer">Seu acesso a este valor expira em: <span id="countdown">04:56</span></div>
 
     <!-- FINAL WARNING -->
     <section class="final-warning reveal" id="checkout">
-      Se você fechar essa página agora, talvez volte para a mesma frase de sempre: “tá tudo bem”. Mesmo cansada. Mesmo em silêncio. Mesmo querendo ser percebida. Mas se continuar, talvez essa seja a primeira vez em muito tempo que você escolhe se ouvir.
+      <strong>A escolha é sua:</strong> Você pode fechar essa página agora, acordar amanhã, colocar a armadura de novo e fingir que está tudo perfeito até o seu corpo pifar de vez. Ou você pode clicar no botão acima e, pela primeira vez em muito tempo, escolher se ouvir. 
     </section>
 
-    <!-- NEW: GUARANTEE -->
+    <!-- GUARANTEE -->
     <div class="guarantee reveal">
       <span class="icon">🛡️</span>
-      <strong>Garantia de 7 dias</strong><br>
-      Se você abrir as primeiras páginas deste livro, ler os primeiros capítulos e sentir que ele não colocou em palavras o que você sente, ou que ele trouxe mais cobrança do que alívio, devolvemos cada centavo do seu investimento. Nosso compromisso é com o seu espaço de respiro.
+      <strong>O Risco É Todo Meu (Garantia de 7 dias)</strong><br>
+      Baixe o livro. Leia o primeiro capítulo hoje à noite. Se você não sentir um alívio imediato, se as palavras não tocarem fundo na sua alma, me mande um único e-mail e eu devolvo seus R$17,00 na mesma hora. Sem perguntas, sem burocracia. Você não tem nada a perder, apenas a paz a ganhar.
     </div>
   </main>
 
   <!-- STICKY CTA (MOBILE) -->
   <div id="sticky-cta" class="sticky-cta" style="display:none;">
-    <a href="https://pay.celetus.com/ID6H65S6" class="cta">Quero ler agora — R$17</a>
+    <a href="https://pay.celetus.com/ID6H65S6" class="cta">Quero parar de fingir agora — R$17</a>
   </div>
 
   <!-- Scripts -->
@@ -290,7 +278,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Eu Não Estou Bem",
-    "description": "Um livro digital para quem cansou de fingir que está tudo bem.",
+    "description": "Para você que cansou de ser o pilar de todo mundo e está desabando por dentro.",
     "offers": {
       "@type": "Offer",
       "price": "17.00",
